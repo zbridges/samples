@@ -1,0 +1,20 @@
+achen70, zbridge1
+README-CodeSort
+
+We modeled this problem as a directed graph where each vertex of the digraph is a character
+and each directed edge starts from a character that precedes the endpoint alphabetically. 
+
+To get an 'alphabetical' ordering of the characters, we used a topological sort. Since this
+was the only operation our graph class needed to perform, we chose data structures that would
+increase the efficiency of this function. To quickly get adjacent vertices, we created two
+adjacency lists, one for the entering edges and one for the outgoing edges. The index of 
+both array lists corresponds to numerical vertex representation for each character. 
+
+To sort the new list, we chose quicksort because it has the best efficiency out of all
+the sort methods with O(NlogN) where N is the number of items to sort. Using our topological
+sort, we created a comapreTo method that compared the strings, and then sorted with quicksort. 
+
+To quickly interconvert between characters and vertex numbers, we used a hashmap to 
+map the character to a number which was used as its vertex label. We also had another array
+to map from the vertex label to the character. These two structures were used so that we would have constant
+time conversions from character to vertex number.

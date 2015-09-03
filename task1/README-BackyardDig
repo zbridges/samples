@@ -1,0 +1,23 @@
+achen70, zbridge1
+README-BackyardDig
+
+The problem can be modeled as an undirected graph with weighted edges, 
+where the weight of each edge is the work required to dig the path. 
+The smallest amount of work required to dig up all the toys is equivalent
+to the length of the minimum spanning tree. To solve this problem, we
+used Kruskal's algorithm to find the minimum spanning tree. 
+
+Since we only needed to apply Kruskal's algorithm to solve the problem, 
+we used data structures that would increase the efficiency of Kruskal's. 
+
+Kruskal's creates a forest of disconnected trees and adds the smallest edge
+if no cycle is created. To quickly access the smallest weight edge,
+we created a MinPQ with the edge weight as the key, and the edge as the value.
+The edge object had the two vertices and the weight. 
+
+To quickly check if a cycle is created, or when the minimum spanning tree
+has been created, we used a UnionFind structure with quick unions. 
+
+To quickly inter-convert between vertices and and coordinates, we used a 2D
+integer array that that stored the vertex number at each coordinate,
+and an arraylist of Car objects that stored the coordinate for each vertex. 
